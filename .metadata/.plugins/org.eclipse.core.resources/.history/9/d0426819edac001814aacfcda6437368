@@ -1,0 +1,23 @@
+package com.suresh.inheritance.interview;
+
+public class A {
+	static int a;
+	static void m1(){
+		System.out.println("M-1");
+	}
+
+}
+class B extends A{
+	static int b;
+	static void m2(){
+		System.out.println("M-2");
+	}
+}
+
+
+class Test{
+	public static void main(String[] args) {
+		B b = new B();
+		B.m1();
+	}
+}

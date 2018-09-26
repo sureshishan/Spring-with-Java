@@ -1,0 +1,13 @@
+package com.suresh.ds.sorting.puzzles;
+
+public class MakeObjectEligibleforGarbageCollection {
+	
+	MakeObjectEligibleforGarbageCollection(){
+		
+	}
+
+	public static void main(String[] args) {
+		
+	}
+
+}

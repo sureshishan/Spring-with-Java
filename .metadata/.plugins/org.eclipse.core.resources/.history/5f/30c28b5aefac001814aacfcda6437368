@@ -1,0 +1,12 @@
+package com.suresh.object.clone;
+
+public class CloneDemo {
+
+	public static void main(String[] args) {
+		Person p1 = new Person(100, "Suresh");
+		Person p2 = new Person(100, "Suresh");
+		
+		System.out.println(p1);
+	}
+
+}

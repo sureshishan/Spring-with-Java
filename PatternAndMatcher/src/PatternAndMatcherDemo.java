@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class PatternAndMatcherDemo {
+
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<>();
+		String sql = "select count(poid_id0) as auditPoid from odin_daily_reconcile_audit_t where transaction_id = :transactionId and name = :name";
+		Pattern pattern = Pattern.compile(":[a-zA-Z0-9]*\\w");
+		Matcher matcher = pattern.matcher(sql);
+
+		while (matcher.find()) {
+
+			System.out.println(matcher.start());
+			System.out.println(matcher.end());
+			String value = sql.substring(matcher.start() + 1, matcher.end());
+			list.add(value);
+		}
+
+		System.out.println(list);
+	}
+
+}

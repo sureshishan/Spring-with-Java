@@ -1,0 +1,15 @@
+package com.suresh.ds.sorting.puzzles;
+
+public class MakeObjectEligibleforGarbageCollection {
+
+	private String obj_name;
+
+	MakeObjectEligibleforGarbageCollection(String obj_name) {
+		this.obj_name = obj_name;
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

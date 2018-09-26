@@ -1,0 +1,47 @@
+package com.suresh.inheritance.overriding;
+
+public class OverridingWithExceptionhandling {
+
+	public static void main(String[] args) {
+		A a = new A();
+		a.test();
+	}
+
+}
+
+class A {
+	public void test() {
+		test2();
+	}
+
+	public void test2() {
+		test3();
+	}
+
+	public void test3() {
+		String str = null;
+		int len = str.length();
+	}
+
+}
+
+class B extends A {
+
+}
+
+/*
+ * When runtime environment observes an unhandled unchecked exception object in
+ * a method the the runtime environment will forcibly remove that method from
+ * the stack.
+ * 
+ * By default the method will be removed from the stack one it is completed
+ * executing the last line successfully or closing brace of the method is
+ * reached.
+ * 
+ * in this case the exception object will be propagated from called place to the
+ * calling place.
+ * 
+ * when there is unhandled unchecked exception object then runtime environment
+ * will remove the method from the stack and it propagate the exception object
+ * from the called place to the calling place.
+ */

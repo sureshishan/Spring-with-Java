@@ -1,0 +1,11 @@
+package concurrency;
+
+public class StarvationDemo {
+	
+	static int threadCount = 1;
+
+	public static void main(String[] args) {
+		System.out.println(threadCount+ " thread starts execution.");
+	}
+
+}

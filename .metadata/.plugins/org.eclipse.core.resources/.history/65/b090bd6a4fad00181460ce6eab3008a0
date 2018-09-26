@@ -1,0 +1,29 @@
+package com.suresh.inheritance.overriding;
+
+public class InheritanceOverridingDemo {
+
+	public static void main(String[] args) {
+		Person emp = new Employee();
+		emp.test();
+	}
+}
+
+class Person {
+	public void test() {
+		System.out.println("Person's test().");
+	}
+}
+
+class Employee extends Person {
+	public void test() {
+		System.out.println("Employee's test().");
+	}
+}
+
+/*
+ * If the overriding is initiated and the rules are not satisfied then it is a
+ * compile time error
+ * 
+ * Compiler will not check to which object it is referring to but to the data type of
+ * the reference
+ */

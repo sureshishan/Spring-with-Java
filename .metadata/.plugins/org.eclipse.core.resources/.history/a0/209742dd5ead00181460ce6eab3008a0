@@ -1,0 +1,33 @@
+package com.suresh.inheritance.overriding;
+
+public class OverridingWithExceptionhandling {
+
+	public static void main(String[] args) {
+		A a = new A();
+		a.test();
+	}
+
+}
+
+class A {
+	public void test() {
+		test2();
+	}
+
+	public void test2() {
+		test3();
+	}
+
+	public void test3() {
+		String str = null;
+		int len = str.length();
+	}
+
+}
+
+class B extends A {
+
+}
+
+/*When runtime environment observes an unhandled unchecked exception object 
+ */

@@ -1,0 +1,22 @@
+package interthreadcommunication;
+
+public class MainThread {
+
+	public static void main(String[] args) {
+
+		MyThread t = new MyThread();
+		t.start();
+
+		try {
+			System.out.println("Main thread is going to wait ");
+			t.wait();
+			System.out.println("Main Thread notified.");
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+
+}

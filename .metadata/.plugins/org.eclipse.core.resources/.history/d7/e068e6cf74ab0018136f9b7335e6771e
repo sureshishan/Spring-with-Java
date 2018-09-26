@@ -1,0 +1,32 @@
+package com.suresh.ds.sorting.puzzles;
+
+public class MakeObjectEligibleforGarbageCollection {
+
+	private String obj_name;
+
+	MakeObjectEligibleforGarbageCollection(String obj_name) {
+		this.obj_name = obj_name;
+	}
+
+	public static void show() {
+		MakeObjectEligibleforGarbageCollection t1 = new MakeObjectEligibleforGarbageCollection(
+				"t1");
+		display();
+	}
+
+	public static void display() {
+		MakeObjectEligibleforGarbageCollection t1 = new MakeObjectEligibleforGarbageCollection(
+				"t2");
+	}
+
+	public static void main(String[] args) {
+		show();
+		System.gc();
+	}
+	
+	@Override
+	protected void finalize() throws Throwable {
+		super.finalize();
+	}
+
+}

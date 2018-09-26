@@ -1,0 +1,13 @@
+package com.suresh.spring.springaop.aspects;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+
+@Aspect
+public class LogginAspect {
+	
+	public void logBefore(JoinPoint joinPoint){
+		System.out.println("before loggin.");
+	}
+
+}

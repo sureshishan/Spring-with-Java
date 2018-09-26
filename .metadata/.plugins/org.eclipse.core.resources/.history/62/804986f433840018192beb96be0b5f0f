@@ -1,0 +1,5 @@
+package com.suresh.spring.springaop.aspects;
+
+public class LogginAspect {
+
+}

@@ -1,0 +1,115 @@
+package com.suresh.inheritance.overriding;
+
+public class OverridingWithExceptionhandling {
+
+	public static void main(String[] args) {
+		A a = new A();
+		try {
+			a.test();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Class not found.");
+		}
+	}
+}
+
+class A {
+	public void test() throws ClassNotFoundException {
+		test2();
+	}
+
+	public void test2() throws ClassNotFoundException {
+		test3();
+		test4();
+	}
+
+	public void test3() throws ClassNotFoundException {
+		String str = null;
+		// int len = str.length();
+		Class.forName("A");
+	}
+
+	public void test4() throws Exception {
+
+	}
+}
+
+class B extends A {
+
+}
+
+/*
+ * When runtime environment observes an unhandled unchecked exception object in
+ * a method the the runtime environment will forcibly remove that method from
+ * the stack.
+ * 
+ * By default the method will be removed from the stack one it is completed
+ * executing the last line successfully or closing brace of the method is
+ * reached.
+ * 
+ * in this case the exception object will be propagated from called place to the
+ * calling place.
+ * 
+ * when there is unhandled unchecked exception object then runtime environment
+ * will remove the method from the stack and it propagate the exception object
+ * from the called place to the calling place.
+ * 
+ * the if the runtime environment receives unhandled exception object it will
+ * block the process of execution.
+ * 
+ * This process of propagating the exception from called place to calling place
+ * is called as "Ducking"
+ * 
+ * in case of unchecked exception we need not to write any code to propagate an
+ * exception from called place to calling place. This will be automatically done
+ * in case of unchecked exceptions. it is also called as auto ducking.
+ * 
+ * forcibly removing the method from the stack is called as stack unwinding when
+ * an unhandled unchecked exception is observed by the runtime environment.
+ * 
+ * because of stack unwinding there is automatic ducking in unchecked
+ * exceptions.
+ * 
+ * 
+ * checked exception will not be propagated automatically. there is no concept
+ * of auto ducking in case of checked exceptions.
+ * 
+ * so how i can propagate the checked exception from called place to calling
+ * place?
+ * 
+ * we need to write some code to propagate the checked exception from called
+ * place to calling place.
+ * 
+ * what do you think is the advantage of decking?
+ * 
+ * Ans: Handling all the exception at the single place.
+ * 
+ * we can have a method with checked exception even though we do not have
+ * checked exception raising statement in method. But is case of catch it not
+ * true. there should be a exception raising statement in try.
+ * 
+ * As we go on from called place to the calling place the hierarchy of exception
+ * classes in the throws can be increased but should not be decreased.
+ * 
+ * As the control transfered from called place to calling place the hierarchy
+ * should be increased/same should not be decreased.
+ * 
+ * 
+ * Overriding rules with exception handling.
+ * 
+ * if the super throws a method with an exception in subclass class overridden
+ * method we need not to have throw the exception.
+ * 
+ * if in the sub class we have a throws but in super class it does not exist
+ * then it is a compile time error.
+ * 
+ * the above is same in case of Throwable or exception or any of the checked exceptions.
+ * 
+ * but with unchecked exception there will not be any compatibility issues.
+ * 
+ * and exception order is same or bigger in super class.
+ * 
+ * 
+ */
+
+/*Persistring the state of the object to the file system is called Serialization
+ */

@@ -1,0 +1,21 @@
+package com.suresh.ds.sorting.puzzles;
+
+public class sqrt {
+
+	public static void main(String[] args) {
+		int x = 2;
+		int y = 3;
+		
+		System.out.println(power(x, y));
+		
+	}
+	
+	static int power(int x, int y){
+		
+		if(y == 0)
+			return 1;
+		
+		return 0;
+	}
+
+}

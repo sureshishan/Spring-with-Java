@@ -1,0 +1,10 @@
+package concurrency;
+
+public class DeadlocakDemo {
+	
+	static Thread mainThread;
+	public static void main(String[] args) {
+
+	}
+
+}

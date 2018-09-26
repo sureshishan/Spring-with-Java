@@ -1,0 +1,8 @@
+
+public class InterruptedDemo extends Thread{
+
+	public static void main(String[] args) {
+		
+	}
+
+}

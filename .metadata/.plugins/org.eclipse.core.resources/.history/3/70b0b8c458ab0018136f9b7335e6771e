@@ -1,0 +1,9 @@
+package com.suresh.ds.sorting.puzzles;
+
+public class sqrt {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

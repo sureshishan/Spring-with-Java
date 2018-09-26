@@ -1,0 +1,40 @@
+package com.suresh.object.clone;
+
+public class Person {
+
+	private int id;
+	private String name;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String toString() {
+		return this.id + ":" + this.name;
+	}
+	
+	public boolean equals(Object obj){
+		Person p = (Person) obj;
+		
+	}
+
+	public int hashCode() {
+		int hashValue = 0;
+		hashValue += Integer.toString(id).hashCode();
+		hashValue += name.hashCode();
+		return hashValue;
+	}
+
+}

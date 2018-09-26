@@ -1,0 +1,15 @@
+package other;
+
+import java.io.IOException;
+
+public class OtherDemo {
+
+	public static void main(String[] args) {
+		try{
+			throw new IOException();
+		}catch(Exception ex){
+			
+		}
+	}
+
+}

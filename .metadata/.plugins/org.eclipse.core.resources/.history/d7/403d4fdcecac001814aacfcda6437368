@@ -1,0 +1,10 @@
+package com.suresh.inheritance.interview;
+
+public class A {
+	
+	static int a;
+	static void m1(){
+		System.out.println("M-1");
+	}
+
+}

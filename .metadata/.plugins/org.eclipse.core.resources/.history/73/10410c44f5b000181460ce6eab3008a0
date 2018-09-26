@@ -1,0 +1,14 @@
+public class InterruptedDemo extends Thread {
+
+	public void run() {
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Child thread is executing...");
+			Thread.sleep(1000);
+		}
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

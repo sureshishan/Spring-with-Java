@@ -1,0 +1,12 @@
+package com.suresh.spring.springaop.aspects;
+
+import org.aspectj.lang.annotation.Aspect;
+
+@Aspect
+public class LogginAspect {
+	
+	public void logBefore(){
+		System.out.println("before loggin.");
+	}
+
+}

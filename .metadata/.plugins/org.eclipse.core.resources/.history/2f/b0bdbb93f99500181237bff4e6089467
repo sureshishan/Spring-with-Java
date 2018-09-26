@@ -1,0 +1,20 @@
+package other;
+
+import java.io.IOException;
+
+public class OtherDemo {
+
+	public static void main(String[] args) {
+		POJOs p = new POJOs();
+		p
+	}
+
+}
+
+class POJOs{
+	
+	public int someMethod(){
+		
+	}
+	
+}

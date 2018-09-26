@@ -1,0 +1,29 @@
+package com.suresh.learning.junit;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class GreetingImplTest {
+
+	@Test
+	public void greetShouldReturnAValidOutout() {
+		Greeting greeting = new GreetingImpl();
+		String result = greeting.greet("JUnit");
+		assertNotNull(result);
+		assertEquals("Hello JUnit", result);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void greetShouldThrowAnException_For_NameIsNull() {
+		Greeting greeting = new GreetingImpl();
+		greeting.greet(null);
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void greetShouldThrowAnException_For_NameIsBlanck() {
+		Greeting greeting = new GreetingImpl();
+		greeting.greet("");
+	}
+
+}

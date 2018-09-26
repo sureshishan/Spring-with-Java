@@ -1,0 +1,21 @@
+
+public class PalindromeDemo {
+
+	public static void main(String[] args) {
+		PalindromeDemo pd = new PalindromeDemo();
+		String str = "SaaS";
+		pd.isPalindrome(str);
+	}
+	
+	public boolean isPalindrome(String str){
+		
+		if(str == null){
+			return false;
+		}
+		StringBuilder stringBuilder = new StringBuilder(str);
+		stringBuilder.reverse();
+		
+		return true;
+	}
+
+}

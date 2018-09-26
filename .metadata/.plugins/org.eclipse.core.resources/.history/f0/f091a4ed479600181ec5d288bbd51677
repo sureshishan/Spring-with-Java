@@ -1,0 +1,14 @@
+
+public class PalindromeDemo {
+
+	public static void main(String[] args) {
+		PalindromeDemo pd = new PalindromeDemo();
+		String str = "SaaS";
+		pd.isPalindrome();
+	}
+	
+	public boolean isPalindrome(String str){
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+package other;
+
+import java.io.IOException;
+
+public class OtherDemo {
+
+	public static void main(String[] args) {
+		POJOs p = new POJOs();
+		iny i = p.someMethod();
+	}
+
+}
+
+class POJOs{
+	
+	public int someMethod(){
+		
+		
+		return 0;
+	}
+	
+}

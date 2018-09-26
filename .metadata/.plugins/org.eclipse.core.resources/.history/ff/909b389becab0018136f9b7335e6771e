@@ -1,0 +1,10 @@
+package com.suresh.learning.junit;
+
+public class GreetingImpl implements Greeting {
+
+	public String greet(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

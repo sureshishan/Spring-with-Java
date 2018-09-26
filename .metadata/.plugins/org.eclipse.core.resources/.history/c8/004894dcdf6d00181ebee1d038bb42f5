@@ -1,0 +1,9 @@
+package com.suresh.wrapper.wrapperclasses;
+
+public class CommandLineArguments {
+
+	public static void main(String[] args) {
+		int length = args.length;
+	}
+
+}

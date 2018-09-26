@@ -1,0 +1,18 @@
+package concurrency;
+
+public class DeadlocakDemo extends Thread {
+
+	public void run() {
+		
+		mainThread.join();
+
+	}
+
+	static Thread mainThread;
+
+	public static void main(String[] args) {
+		mainThread = Thread.currentThread();
+
+	}
+
+}

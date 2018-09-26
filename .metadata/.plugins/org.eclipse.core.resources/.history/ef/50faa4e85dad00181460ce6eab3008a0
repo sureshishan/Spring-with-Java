@@ -1,0 +1,26 @@
+package com.suresh.inheritance.overriding;
+
+public class OverridingWithExceptionhandling {
+
+	public static void main(String[] args) {
+		A a = new A();
+		a.test();
+	}
+
+}
+
+class A{
+	public int test(){
+		test2();
+	}
+	
+	public int test2(){
+		
+	}
+	
+	
+}
+
+class B extends A{
+	
+}

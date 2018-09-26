@@ -1,0 +1,18 @@
+package com.suresh.object.clone;
+
+public class CloneDemo {
+
+	public static void main(String[] args) {
+		Person p1 = new Person(100, "Suresh");
+		Person p2 = p1.getColnableObject()//new Person(100, "Suresh");
+		
+		//System.out.println(p1);
+		//System.out.println(p1.equals(p2));
+		
+		//System.out.println(p1.hashCode());
+		//System.out.println(p2.hashCode());
+		
+		
+	}
+
+}

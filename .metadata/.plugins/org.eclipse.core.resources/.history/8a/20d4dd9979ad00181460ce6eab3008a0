@@ -1,0 +1,238 @@
+package com.suresh.inheritance.overriding;
+
+public class OverridingWithExceptionhandling {
+
+	public static void main(String[] args) {
+		A a = new A();
+		try {
+			a.test();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Class not found.");
+		}
+	}
+}
+
+class A {
+	public void test() throws ClassNotFoundException {
+		test2();
+	}
+
+	public void test2() throws ClassNotFoundException {
+		test3();
+		test4();
+	}
+
+	public void test3() throws ClassNotFoundException {
+		String str = null;
+		// int len = str.length();
+		Class.forName("A");
+	}
+
+	public void test4() throws Exception {
+
+	}
+}
+
+class B extends A {
+
+}
+
+/*
+ * When runtime environment observes an unhandled unchecked exception object in
+ * a method the the runtime environment will forcibly remove that method from
+ * the stack.
+ * 
+ * By default the method will be removed from the stack one it is completed
+ * executing the last line successfully or closing brace of the method is
+ * reached.
+ * 
+ * in this case the exception object will be propagated from called place to the
+ * calling place.
+ * 
+ * when there is unhandled unchecked exception object then runtime environment
+ * will remove the method from the stack and it propagate the exception object
+ * from the called place to the calling place.
+ * 
+ * the if the runtime environment receives unhandled exception object it will
+ * block the process of execution.
+ * 
+ * This process of propagating the exception from called place to calling place
+ * is called as "Ducking"
+ * 
+ * in case of unchecked exception we need not to write any code to propagate an
+ * exception from called place to calling place. This will be automatically done
+ * in case of unchecked exceptions. it is also called as auto ducking.
+ * 
+ * forcibly removing the method from the stack is called as stack unwinding when
+ * an unhandled unchecked exception is observed by the runtime environment.
+ * 
+ * because of stack unwinding there is automatic ducking in unchecked
+ * exceptions.
+ * 
+ * 
+ * checked exception will not be propagated automatically. there is no concept
+ * of auto ducking in case of checked exceptions.
+ * 
+ * so how i can propagate the checked exception from called place to calling
+ * place?
+ * 
+ * we need to write some code to propagate the checked exception from called
+ * place to calling place.
+ * 
+ * what do you think is the advantage of decking?
+ * 
+ * Ans: Handling all the exception at the single place.
+ * 
+ * we can have a method with checked exception even though we do not have
+ * checked exception raising statement in method. But is case of catch it not
+ * true. there should be a exception raising statement in try.
+ * 
+ * As we go on from called place to the calling place the hierarchy of exception
+ * classes in the throws can be increased but should not be decreased.
+ * 
+ * As the control transfered from called place to calling place the hierarchy
+ * should be increased/same should not be decreased.
+ * 
+ * 
+ * Overriding rules with exception handling.
+ * 
+ * if the super throws a method with an exception in subclass class overridden
+ * method we need not to have throw the exception.
+ * 
+ * if in the sub class we have a throws but in super class it does not exist
+ * then it is a compile time error.
+ * 
+ * the above is same in case of Throwable or exception or any of the checked
+ * exceptions.
+ * 
+ * but with unchecked exception there will not be any compatibility issues.
+ * 
+ * and exception order is same or bigger in super class.
+ */
+
+/*
+ * Persisting the state of the object to the file system is called Serialization
+ * 
+ * In general words persisting means storing.
+ * 
+ * what is the state of the object. how we can define the state of the object?
+ * 
+ * The values of non-static attributes are called as state of the object.
+ * 
+ * ex: the information is transfered from IRCTC to ICICI while booking a ticket.
+ * 
+ * objects from one system to another system will transfered though only with
+ * files.
+ * 
+ * saving the values of the non-static attributes to a file system is called as
+ * serialization
+ * 
+ * objects from one system to another system will transfered though only with
+ * files. we cannot transfer objects as objects to other system. it should be
+ * through files.
+ * 
+ * since the scope of the objects will only to the JVM.
+ * 
+ * readObject --> ClassNotFoundException
+ * 
+ * reason
+ * 
+ * it is 2 step process
+ * 
+ * read object method trying to refer the concerned class
+ * 
+ * first will create the object and
+ * 
+ * set the info from file system to object.
+ * 
+ * so to create the object we need .class file. so that .class file is not found
+ * it will throw an exception.
+ * 
+ * serialization never expect a no-arg constructor
+ * 
+ * internally readbject use Class.forName() to create the object to de-serialize
+ * the class.
+ * 
+ * is the static attributes serialized or not?
+ * 
+ * No. reason being only the non-static attributes will be apart of object. and
+ * state of the object is being serialized but not the state of the class.
+ * 
+ * example:
+ * 
+ * class Person implements Serializable{ }
+ * 
+ * class Employee extends person{
+ * 
+ * }
+ * 
+ * is Employee eligible for serialization or not?
+ * 
+ * Yes.
+ * 
+ * Since Person implements Serializable even Employee is a specialized entity
+ * for Serializable.
+ * 
+ * so even Employee definetly serializable.
+ * 
+ * if the super class is serializable definetly even sub class is also
+ * serializable
+ * 
+ * Scenario 2:
+ * 
+ * Person is Serializable but i do not want to make Employee as serializable
+ * 
+ * what should we do?
+ * 
+ * It is impossible to do that.
+ * 
+ * you cannot restrict the inheritance. we cannot filter the inheritance.
+ * 
+ * how i can restrict a non-static attribute from serialization? so we do have
+ * another access modifier transient
+ * 
+ * transient modifier is used only for attributes
+ * 
+ * only non-transient members of the object will be serialized.
+ * 
+ * When a NotSerializableException will be raised.
+ * 
+ * what the class is not marked with Serializable interface.
+ * 
+ * scenario 2:
+ * 
+ * Now Employee class has Address reference and Address is not serializable
+ * 
+ * when i try to serializable Employee object what will happen
+ * 
+ * ex:
+ * 
+ * class Person implements Serializable{ }
+ * 
+ * Employee extends Person{
+ * 
+ * int a; int b; Address a; }
+ * 
+ * class Address{ }
+ * 
+ * when address is null it is fine and not giving any exception but if we are
+ * assignig something to address and set it on Employee it will throw
+ * NotSerializableException
+ * 
+ * So in an ideal scenario if we want to make the class as serailizable then all
+ * the attributes in the class should be Serializable.
+ * 
+ * A primitive will be automatically converted into corresponding Wrapper class.
+ * 
+ * all the wrapper classes as well as Strings are by default Serializable in
+ * Java
+ * 
+ * When there is a significant difference/ change in serializable members of the
+ * class( in the serializable class) to represent the difference that is being
+ * changed we use an attribute i.e serialVersionUID it tells the specific
+ * vertion of the serializable class.
+ * 
+ * private static final long serialVersionUID = 1L;
+ * 
+ * when there is a significant change we should change the serialVersonUID=2L;
+ */

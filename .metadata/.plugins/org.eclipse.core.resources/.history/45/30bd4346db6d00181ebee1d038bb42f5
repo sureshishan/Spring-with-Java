@@ -1,0 +1,10 @@
+package com.suresh.wrapper.wrapperclasses;
+
+public class StringAndPrimitive {
+
+	public static void main(String[] args) {
+		int x = 10;
+		String s = Integer.toString(x);
+	}
+
+}

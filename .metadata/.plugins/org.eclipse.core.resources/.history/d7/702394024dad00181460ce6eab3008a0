@@ -1,0 +1,19 @@
+package com.suresh.inheritance.overriding;
+
+public class InheritanceOverridingDemo {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class Person{
+	public void test(){
+		System.out.println("Person's test().");
+	}
+}
+class Employee{
+	public void test(){
+		System.out.println("Employee's test()");
+	}
+}
